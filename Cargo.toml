@@ -1,0 +1,36 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/*",
+]
+
+[workspace.package]
+authors = ["COMBRIAT Kévin <japan.combriat.kevin@gmail.com>"]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92.0"
+
+[workspace.lints.clippy]
+all = "deny"
+pedantic = "deny"
+wildcard_imports = "deny"
+
+[workspace.dependencies]
+ciso-rs = { path = "crates/ciso-rs" }
+
+byteorder = "1.5.0"
+criterion = "0.8.1"
+crossbeam = "0.8.4"
+flate2 = "1.1.5"
+getrandom = "0.3.4"
+memmap2 = "0.9.9"
+num_cpus = "1.17.0"
+parking_lot = "0.12.5"
+tempfile = "3.24.0"
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+panic = "abort"
+strip = true
+lto = true

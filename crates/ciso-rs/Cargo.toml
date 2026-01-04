@@ -1,0 +1,27 @@
+
+[package]
+name = "ciso-rs"
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+byteorder.workspace = true
+crossbeam.workspace = true
+flate2.workspace = true
+memmap2.workspace = true
+num_cpus.workspace = true
+parking_lot.workspace = true
+
+[dev-dependencies]
+criterion = { workspace = true, features = ["html_reports"] }
+getrandom.workspace = true
+tempfile.workspace = true
+
+[[bench]]
+name = "ciso"
+harness = false
